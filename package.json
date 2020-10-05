@@ -1,0 +1,22 @@
+{
+  "name": "booking-proxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quacklemore/booking-proxy.git"
+  },
+  "author": "Luke Eastman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/quacklemore/booking-proxy/issues"
+  },
+  "homepage": "https://github.com/quacklemore/booking-proxy#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
