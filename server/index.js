@@ -13,8 +13,9 @@ app.use(express.static(path.join(__dirname, '..','public')));
 
 
 
-app.get('/api/low-days/0', (req, res) => {
-  request('http://localhost:4002/api/low-days/0').pipe(res);
+app.get('/api/low-days/:id', (req, res) => {
+  let id = req.params.id;
+  request(`http://localhost:4002/api/low-days/${id}`).pipe(res);
 });
 
 app.post('/api/pictures/', (req, res) => {
@@ -35,6 +36,10 @@ app.get('/api/hotel/:hotelId', (req, res) => {
 app.get('/reviews', (req, res) => {
   request('http://localhost:4003/reviews').pipe(res);
 });
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, '..','public', 'index.html'));
+})
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
