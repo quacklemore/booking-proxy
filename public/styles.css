@@ -1,0 +1,23 @@
+body {
+  font-family: arial;
+}
+
+#proxy-header {
+  display: flex;
+}
+
+#top-row {
+  display: flex;
+}
+
+#booking-app {
+  position:relative;
+  top:100px;
+  margin: 20px;
+}
+
+#services {
+  margin: auto;
+  width: fit-content;
+}
+
