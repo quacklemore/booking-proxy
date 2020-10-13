@@ -18,14 +18,10 @@ app.get('/api/low-days/:id', (req, res) => {
   request(`http://localhost:4002/api/low-days/${id}`).pipe(res);
 });
 
-app.post('/api/pictures/', (req, res) => {
-  console.log('hotel', req.body.hotel);
-  let options = {
-    uri: 'http://localhost:4000/api/pictures/',
-    json: true,
-    body: {hotel: req.body.hotel}
-  }
-  request.post(options).pipe(res);
+app.get('/api/pictures/:id', (req, res) => {
+  let id = req.params.id;
+
+  request(`http://localhost:4000/api/pictures/${id}`).pipe(res);
 });
 
 app.get('/api/hotel/:hotelId', (req, res) => {
@@ -33,8 +29,8 @@ app.get('/api/hotel/:hotelId', (req, res) => {
   request(`http://localhost:4001/api/hotel/${hotelId}`).pipe(res);
 });
 
-app.get('/reviews', (req, res) => {
-  request('http://localhost:4003/reviews').pipe(res);
+app.get('/hotel/:hotel', (req, res) => {
+  request(`http://localhost:4003/hotel/${req.params.hotel}`).pipe(res);
 });
 
 app.get('/*', (req, res) => {
